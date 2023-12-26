@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAYA</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login/">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to KAYA</h1>
+            <p>We are a non-profit organization dedicated to helping people in need.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>KAYA was founded in 2022 with the mission of providing essential resources to those in need.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Education Support</li>
+                <li>Healthcare Assistance</li>
+                <li>Food Provision</li>
+                <li>Crisis Intervention</li>
+            </ul>
+        </section>
+        <section id="donate">
+            <center><button onclick="alert('Thanks you for donation to the cause')"><h1>Click to Donate</h1></button></center>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to get involved, please feel free to contact us at contactus@kaya.com.</p>
+        </section>
+
+        <section id="email">
+            <h1>Subscribe to Our Monthly Newsletter</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                <p>
+                <h3>{{ form.as_p }}</h3>
+                </p>
+                <br>
+                <input type="submit" name="Subscribe">
+                </div>
+                </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 KAYA. All rights reserved.</p>
+    </footer>
+</body>
+</html>

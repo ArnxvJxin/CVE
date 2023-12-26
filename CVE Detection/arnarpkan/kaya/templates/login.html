@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+</head>
+<body>
+<center>
+<h1>KAYA Administrator Login</h1><br>
+<form action="account/" method="post">
+{% csrf_token %}
+Username: 
+<input name="username">
+<br><br>
+Password:
+<input name="password">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</center>
+</body>
+</html>
